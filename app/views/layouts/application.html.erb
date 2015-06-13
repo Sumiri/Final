@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>Cooks HTML Template</title>
+
+  
+
+     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+       
+                             
+  
+
+  <%= csrf_meta_tags %>
+  
+
+
+
+
+
+</head>
+<body>
+  
+  <!--Control Bar Start-->
+<div id="controls-wrapper" class="load-item">
+<div id="controls">			
+    <ul id="slide-list"></ul>			
+</div>
+</div>
+<!--Control Bar End-->
+
+<!--Logo Start-->
+
+	<h1>Perú Pedido</h1>
+    <h4>Más de 50 restaurantes con delivery en Lima</h4>
+
+<!--Logo End-->
+
+<!--Menu Start-->
+<nav class="menu nav_wrapper" id="myslidemenu">
+    <ul class="menu" id="jqueryslidemenu">
+        <li class="current"><a href="/index"><i class="fa fa-home"></i>Inicio</a></li>
+          <li><a href="/restaurante"><i class="fa fa-cutlery"></i>Restaurantes</a>
+			 <li><a href="Registro_1.html"><i class="fa fa-pencil-square"></i>Registrate</a></li>
+	 <li><a href="admin_2.html"><i class="fa fa-phone-square"></i>Iniciar Sesión</a></li>
+               <li><a href="contact.html"><i class="fa fa-comments"></i>Contáctenos</a></li>
+        
+
+	
+		 
+		
+    </ul>
+</nav>
+<!--Menu End-->
+
+
+<!--Intro Text Start-->
+
+
+
+
+
+<%= yield %>
+
+</body>
+</html>
