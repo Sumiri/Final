@@ -8,7 +8,7 @@
   
 
      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-       
+      <%= javascript_include_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
                              
   
 
@@ -42,9 +42,22 @@
     <ul class="menu" id="jqueryslidemenu">
         <li class="current"><a href="/index"><i class="fa fa-home"></i>Inicio</a></li>
           <li><a href="/restaurante"><i class="fa fa-cutlery"></i>Restaurantes</a>
-			 <li><a href="Registro_1.html"><i class="fa fa-pencil-square"></i>Registrate</a></li>
-	 <li><a href="admin_2.html"><i class="fa fa-phone-square"></i>Iniciar Sesión</a></li>
+          
+          <% if user_signed_in?  %>
+ 
+  <li><%= link_to "Perfil", new_user_registration_path%></li>
+  <li><%= link_to "Pedidos", new_user_registration_path%></li>
+   <li><%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete %></li>
+  <% else %>
+  
+  	<li><%= link_to "Registrate", new_user_registration_path%></li>
+	 <li><%= link_to "Iniciar Sesión", new_user_session_path %></li>
+                     <% end  %>
+		
                <li><a href="contact.html"><i class="fa fa-comments"></i>Contáctenos</a></li>
+   
+             
+               
         
 
 	
@@ -52,6 +65,11 @@
 		
     </ul>
 </nav>
+ <% if user_signed_in?  %>
+ 
+ 
+<%= link_to "Cerra Sesión", destroy_user_session_path, method: :delete %>
+                     <% end  %>
 <!--Menu End-->
 
 
@@ -59,7 +77,8 @@
 
 
 
-
+  <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
 
 <%= yield %>
 
