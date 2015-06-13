@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Datos</h1>
+
+
+ 
+ 
+
+                  
+
+<table>
+  <thead>
+    <tr>
+      <th>Fullname</th>
+      <th>Phone</th>
+      <th>Direccion</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @datos.each do |dato| %>
+    <% if dato.user == current_user  %>
+      <tr>
+        <td><%= dato.fullname %></td>
+        <td><%= dato.phone %></td>
+        <td><%= dato.direccion %></td>
+        <td><%= dato.user.email %></td>
+        <td><%= link_to 'Show', dato %></td>
+        <td><%= link_to 'Edit', edit_dato_path(dato) %></td>
+        <td><%= link_to 'Destroy', dato, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+         <% end  %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dato', new_dato_path %>
