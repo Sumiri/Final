@@ -1,0 +1,39 @@
+
+
+<%= stylesheet_link_tag 'restaurante', media: 'all', 'data-turbolinks-track' => true %>
+<h1><a>La Carta
+	
+
+<% @menus.each do |menu| %>
+
+
+   <%= menu.restaurante.nombre %>
+       
+         <% end  %>
+           </a> </h1>
+         <table>
+  <thead>
+    <tr>
+      <th>Plato de Entrada</th>
+      <th>Plato de Fondo</th>
+      <th>Postre</th>
+      <th>Bebida</th>
+      <th>Precio</th>
+  
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @menus.each do |menu| %>
+
+      <tr>
+        <td><%= menu.entrada %></td>
+         <td><%= menu.plato_fondo%></td>
+         <td><%= menu.postre%></td>
+          <td><%= menu.bebida %></td>
+           <td><%= menu.precio %></td>
+      </tr>
+  
+    <% end %>
+  </tbody>
+</table>

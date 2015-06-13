@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   get "/index" => 'home#index'
   get "/admin" => 'admin/dashboard#index'
-   get "/restaurante" => 'home#restaurant'
+  get "sitio"  => 'home#sitio', as: 'sitio'
+    get "carta"  => 'home#carta', as: 'carta'
  
    root 'home#index'
   # You can have the root of your site routed with "root"

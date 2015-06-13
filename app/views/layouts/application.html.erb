@@ -41,11 +41,11 @@
 <nav class="menu nav_wrapper" id="myslidemenu">
     <ul class="menu" id="jqueryslidemenu">
         <li class="current"><a href="/index"><i class="fa fa-home"></i>Inicio</a></li>
-          <li><a href="/restaurante"><i class="fa fa-cutlery"></i>Restaurantes</a>
+          <li><a href="/sitio"><i class="fa fa-cutlery"></i>Restaurantes</a>
           
           <% if user_signed_in?  %>
  
-  <li><%= link_to "Perfil", new_user_registration_path%></li>
+  <li><%= link_to "Perfil", datos_path %></li>
   <li><%= link_to "Pedidos", new_user_registration_path%></li>
    <li><%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete %></li>
   <% else %>
@@ -65,11 +65,7 @@
 		
     </ul>
 </nav>
- <% if user_signed_in?  %>
- 
- 
-<%= link_to "Cerra Sesión", destroy_user_session_path, method: :delete %>
-                     <% end  %>
+
 <!--Menu End-->
 
 

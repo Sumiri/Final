@@ -1,0 +1,53 @@
+
+<%= stylesheet_link_tag 'restaurante', media: 'all', 'data-turbolinks-track' => true %>
+       
+                             
+
+
+  <%= csrf_meta_tags %>
+  
+
+	<h1><a>Restaurante
+	
+	
+	<% @restaurantes.each do |restaurante| %>
+
+
+   <%= restaurante.nombre %>
+       
+         <% end  %>
+         
+         </a> </h1>
+         
+         <% @restaurantes.each do |restaurante| %>
+
+
+   <%= restaurante.descripcion %>
+       
+         <% end  %>
+         
+         
+          <% @restaurantes.each do |restaurante| %>
+          </br>
+
+<ul>
+   <li>"DIRECCIÓN" <%= restaurante.telefono %></li>
+   <br>
+    <li>"TÉLEFONO" <%= restaurante.direccion %></li>
+       </ul>
+         <% end  %>
+         
+         
+         
+         <nav class="menu nav_wrapper" id="myslidemenu">
+
+    <ul class="menu" id="jqueryslidemenu">
+    <li class="current"><a href="carta"><i class="fa fa-cutlery"></i>La Carta</a></li>
+		
+	
+	</ul>
+</nav>
+
+         
+         
+         
